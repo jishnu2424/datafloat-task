@@ -18,7 +18,7 @@ function Register() {
         setUsername("");
         setPassword("");
       });
-      navigate("/login");
+      navigate("/");
     } else {
       alert("Please fill in all fields.");
     }

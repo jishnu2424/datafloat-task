@@ -96,7 +96,7 @@ const Userlist = () => {
           ))}
         </tbody>
       </Table>
-      <Link to={'/login'}><Button className='logbtn'>Login</Button></Link>
+      <Link to={'/'}><Button className='logbtn'>Login</Button></Link>
     </div>
   );
 };
