@@ -12,17 +12,26 @@ function Register() {
   const navigate = useNavigate();
 
   const handleRegister = () => {
-    if (username && password) {
-      add({ username, password, status, previousLogins: [] }).then(() => {
-        alert("User Registered Successfully");
-        setUsername("");
-        setPassword("");
-      });
-      navigate("/");
-    } else {
+    const passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    
+    if (!username || !password) {
       alert("Please fill in all fields.");
+      return;
     }
+  
+    if (!passwordPattern.test(password)) {
+      alert("Password must be at least 8 characters long, contain at least one number, and one special character.");
+      return;
+    }
+  
+    add({ username, password, status, previousLogins: [] }).then(() => {
+      alert("User Registered Successfully");
+      setUsername("");
+      setPassword("");
+    });
+    navigate("/");
   };
+  
   return (
     <>
       <div style={{ backgroundColor: "black", height: "730px" }}>
