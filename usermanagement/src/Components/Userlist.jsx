@@ -57,6 +57,7 @@ const Userlist = () => {
             <th>ID</th>
             <th>Username</th>
             <th>Status</th>
+            <th>Login Data </th> 
             <th>Actions</th>
           </tr>
         </thead>
@@ -77,21 +78,32 @@ const Userlist = () => {
               </td>
               <td>{user.status}</td>
               <td>
-  {editUserId === user.id ? (
-    <div className="button-container">
-      <Button className='savebutton' onClick={() => handleSaveUsername(user)}>Save</Button>
-      <Button className='cancelbutton' onClick={handleCancelEdit}>Cancel</Button>
-    </div>
-  ) : (
-    <div className="button-container">
-      <Button className='editbutton' onClick={() => handleEdit(user)}>Edit</Button>
-      <Button className='blockbutton' onClick={() => handleBlockUnblock(user)}>
-        {user.status === 'Active' ? 'Block' : 'Unblock'}
-      </Button>
-      <Button className='deletebutton' onClick={() => handleDelete(user.id)}>Delete</Button>
-    </div>
-  )}
-</td>
+                {user.previousLogins && user.previousLogins.length > 0 ? (
+                  <ul>
+                    {user.previousLogins.map((login, index) => (
+                      <li key={index}>{new Date(login).toLocaleString()}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  "No Logins"
+                )}
+              </td>
+              <td>
+                {editUserId === user.id ? (
+                  <div className="button-container">
+                    <Button className='savebutton' onClick={() => handleSaveUsername(user)}>Save</Button>
+                    <Button className='cancelbutton' onClick={handleCancelEdit}>Cancel</Button>
+                  </div>
+                ) : (
+                  <div className="button-container">
+                    <Button className='editbutton' onClick={() => handleEdit(user)}>Edit</Button>
+                    <Button className='blockbutton' onClick={() => handleBlockUnblock(user)}>
+                      {user.status === 'Active' ? 'Block' : 'Unblock'}
+                    </Button>
+                    <Button className='deletebutton' onClick={() => handleDelete(user.id)}>Delete</Button>
+                  </div>
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
