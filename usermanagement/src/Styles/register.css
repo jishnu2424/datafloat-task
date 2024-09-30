@@ -1,0 +1,116 @@
+.regform {
+    position: relative; 
+    margin: 0 auto; 
+    top: 100px; 
+    color: black;
+    background-color: white;
+    font-family: 'popins';
+    display: grid;
+    width: 400px; 
+    padding: 20px;
+    justify-items: center;
+}
+
+.reginput {
+    width: 100%;
+    height: 64px;
+    border-radius: 5px;
+}
+
+.rl1 {
+    font-size: 25px;
+}
+
+.regbtn {
+    width: 100%;
+    height: 64px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+
+.regbtn:hover {
+    color: white;
+    background-color: black;
+    border: 2px white solid;
+}
+
+.rlh1 {
+    margin: 0 auto; 
+    top: 50px;
+    text-align: center;
+    color: white;
+    font-family: 'popins';
+}
+
+@media (max-width: 1024px) {
+    .regform {
+        width: 350px; 
+        padding: 15px;
+    }
+
+    .rlh1 {
+        top: 70px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .regform {
+        width: 90%; 
+        top: 150px;
+        padding: 15px;
+    }
+
+    .rlh1 {
+        top: 60px;
+        font-size: 22px;
+    }
+
+    .reginput, .regbtn {
+        height: 50px; 
+    }
+
+    .rl1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .regform {
+        width: 90%;
+        top: 120px;
+        padding: 10px;
+    }
+
+    .rlh1 {
+        top: 50px;
+        font-size: 18px;
+    }
+
+    .reginput, .regbtn {
+        height: 45px; 
+    }
+
+    .rl1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .regform {
+        width: 95%; 
+    }
+
+    .rlh1 {
+        font-size: 16px; 
+    }
+
+    .reginput, .regbtn {
+        height: 40px;
+    }
+
+    .rl1 {
+        font-size: 16px;
+    }
+}

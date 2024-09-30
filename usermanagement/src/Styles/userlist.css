@@ -1,0 +1,86 @@
+.usertable{
+    width: 1000px;
+    height: auto;
+    margin: auto;
+}
+.blockbutton{
+    background-color: black;
+    color: white;
+    margin-right: 5px;   
+}
+.deletebutton{
+    background-color: red;
+    color: white;
+    margin-right: 5px;  
+}
+.logbtn{
+    margin-top: 10px;
+    color: black;
+    background-color: white;
+}.usertable {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+.usertable th, .usertable td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px;
+}
+
+.blockbutton, .editbutton, .deletebutton, .savebutton, .cancelbutton {
+    flex-grow: 1;
+    margin-right: 5px;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.deletebutton {
+    background-color: red;
+    color: white;
+}
+
+.blockbutton, .editbutton, .savebutton {
+    background-color: black;
+    color: white;
+}
+
+.savebutton {
+    background-color: blue;
+    color: white;
+}
+
+.editbutton {
+    background-color: blue;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blockbutton, .editbutton, .deletebutton, .savebutton, .cancelbutton {
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blockbutton, .editbutton, .deletebutton, .savebutton, .cancelbutton {
+        padding: 6px;
+        font-size: 10px;
+    }
+}
